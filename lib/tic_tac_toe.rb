@@ -97,22 +97,12 @@ end
 
 def play(board)
 
-  is_over = false
-  # display_board(board)
-  
-  # while (not is_over)
+  while !over?(board)
     turn(board)
-    over?(board)
-    # turn(board)
-    over?(board)
-    # turn(board)
-    over?(board)
-  # end
-  # board = ["X"," "," ","X"," "," ","X"," "," "]
+  end
   
   if won?(board)
-    winner = winner(board)
-    puts "Congratulations #{winner}!"
+    puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
   end
